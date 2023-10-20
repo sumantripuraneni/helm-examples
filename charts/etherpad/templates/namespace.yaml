@@ -1,0 +1,7 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: etherpad
+  labels:
+    {{- include "etherpad.labels" . | nindent 4 }}
+spec: {}

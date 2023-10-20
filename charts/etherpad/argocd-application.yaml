@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: etherpad
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: etherpad
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    helm:
+      valueFiles:
+        - values.yaml
+    path: charts/etherpad
+    repoURL: 'https://github.com/sumantripuraneni/helm-examples.git'
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
