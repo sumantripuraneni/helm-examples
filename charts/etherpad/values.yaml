@@ -1,5 +1,5 @@
 # Default values for etherpad.
-replicaCount: 2
+replicaCount: 4
 
 defaultTitle: "Etherpad"
 defaultText: "✍️ Assign yourself a user and share your ideas! ✍️"
